@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>📘 BookFlow - Đọc PDF tiếng Việt</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+  <header>📘 BookFlow - Đọc sách PDF có giọng tiếng Việt</header>
+
+  <input type="file" id="pdfInput" accept="application/pdf" />
+
+  <div class="controls">
+    <button onclick="prevPage()">⏮️ Trang trước</button>
+    <button id="playPauseBtn" onclick="toggleSpeak()">▶️ Phát / ⏸️ Tạm dừng</button>
+    <button onclick="nextPage()">⏭️ Trang sau</button>
+    <button onclick="zoomOut()">➖ Thu nhỏ</button>
+    <button onclick="zoomIn()">➕ Phóng to</button>
+    <button onclick="fontDown()">A−</button>
+    <button onclick="fontUp()">A+</button>
+  </div>
+
+  <div class="voice-controls">
+    <label>Giọng đọc: </label>
+    <select id="voiceSelect">
+      <option value="">Đang tải danh sách giọng...</option>
+    </select>
+
+    <label>Tốc độ đọc: </label>
+    <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
+    <span id="rateValue">1.0x</span>
+  </div>
+
+  <div id="viewer">
+    <div id="pageContainer">
+      <canvas id="pdfCanvas"></canvas>
+      <div id="textLayer" class="textLayer"></div>
+    </div>
+  </div>
+
+  <div id="status">Trạng thái: Sẵn sàng</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
