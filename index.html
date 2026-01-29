@@ -23,11 +23,16 @@
     <button onclick="fontUp()">A+</button>
   </div>
 
-  <div class="voice-controls">
-    <label>Giọng đọc: </label>
-    <select id="voiceSelect">
-      <option value="">Đang tải danh sách giọng...</option>
-    </select>
+ <div class="voice-controls">
+  <label>Giọng đọc tiếng Việt: </label>
+  <select id="voiceSelect">
+    <option value="">Chọn giọng (Nam/Nữ)</option>
+  </select>
+
+  <label>Tốc độ: </label>
+  <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
+  <span id="rateValue">1.0x</span>
+</div>
 
     <label>Tốc độ đọc: </label>
     <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" />
